@@ -57,7 +57,7 @@ $GLOBALS['TL_DCA']['tl_map'] = array
 		),
 		'tstamp' => array
 		(
-			'sql'                     => "int(10) unsigned NOT NULL default '0'"
+			'sql'                      => ['type' => 'integer','notnull' => false, 'unsigned' => true,'default' => '0','fixed' => true]
 		),
 		'title' => array
 		(
@@ -102,7 +102,7 @@ $GLOBALS['TL_DCA']['tl_map'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_map']['position'],
 			'inputType'           	  => 'positionselectorfield',
 			'eval'                    => array('rgxp'=>'digit', 'tl_class'=>'clr', 'nospace'=>false),
-			'sql'					  => "varchar(128) NOT NULL default ''"
+			'sql'					  => "varchar(128) NOT NULL default 'a:3:{i:0;s:1:\"0\";i:1;s:1:\"0\";i:2;s:1:\"1\";}'"
 		),
 		'autozoom' => array
 		(
@@ -110,7 +110,7 @@ $GLOBALS['TL_DCA']['tl_map'] = array
 			'inputType'               => 'checkbox',
 			'isBoolean'				  => true,
 			'eval'                    => array( 'tl_class'=>'w100 clr'),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 		'mousescroll' => array
 		(
@@ -118,7 +118,7 @@ $GLOBALS['TL_DCA']['tl_map'] = array
 			'inputType'               => 'checkbox',
 			'isBoolean'				  => true,
 			'eval'                    => array( 'tl_class'=>'w100 clr'),
-			'sql'                     => "char(1) NOT NULL default '1'"
+			'sql'                     => array('type' => 'boolean', 'default' => 1)
 		),
 		'minzoom' => array
 		(
